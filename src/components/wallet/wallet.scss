@@ -1,11 +1,12 @@
 @import '../../global/style.scss';
+@import '../../global/bootstrap.min.css';
 
 :host {
   display: block;
-  font-family: $font-family;
-  font-size: 15px;
+  // font-family: $font-family;
+  // font-size: 15px;
 
-  p {
+  /* p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -13,7 +14,7 @@
   }
   button {
     margin-bottom: 10px;
-  }
+  } */
 
   .account-key {
     display: flex;
@@ -32,7 +33,7 @@
     padding: 10px;
     font-size: 12px;
     line-height: 1.2;
-    font-family: $font-mono;
+    // font-family: $font-mono;
     margin-bottom: 10px;
     width: 100%;
   }
@@ -49,5 +50,5 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } 
 }

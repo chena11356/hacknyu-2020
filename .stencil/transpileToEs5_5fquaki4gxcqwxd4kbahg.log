@@ -1,0 +1,7 @@
+import { a as patchEsm, b as bootstrapLazy } from './core-c5415e2b.js';
+var defineCustomElements = function (win, options) {
+    return patchEsm().then(function () {
+        bootstrapLazy([["stellar-loader_3", [[1, "stellar-wallet", { "server": [16], "homeDomain": [16], "toml": [16], "account": [32], "prompter": [32], "loading": [32], "error": [32] }], [1, "stellar-loader", { "interval": [8], "chances": [32], "chance": [32] }], [1, "stellar-prompt", { "prompter": [1040], "input": [32] }]]]], options);
+    });
+};
+export { defineCustomElements };

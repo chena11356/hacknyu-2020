@@ -8,6 +8,14 @@ import { encrypt } from '@services/tweetnacl'
 
 export default async function createAccount() {
   try {
+    var account_type = await this.setPrompt({
+      message: 'Are you creating a fund or a school?',
+      type: 'text'
+    })
+    // https://www.w3schools.com/html/html_form_input_types.asp
+
+    if (!(account_type == "FUND" || account_type == "SCHOOL")) throw 'Invalid account type'
+
     const pincode_1 = await this.setPrompt({
       message: 'Enter an account pincode',
       type: 'password'
@@ -37,7 +45,20 @@ export default async function createAccount() {
     await axios(`https://friendbot.stellar.org?addr=${keypair.publicKey()}`)
     .finally(() => this.loading = {...this.loading, fund: false})
 
+    var account_type_title;
+    var account_type_message;
+    if (account_type == "FUND") {
+      account_type_title = "Fund Dashboard";
+      account_type_message = "Through this dashboard, you may manage your blockchain fund and analyze how schools are using your assets."
+    } else {
+      account_type_title = "School Dashboard";
+      account_type_message = "Through this dashboard, you may manage your school funds and appropriate them accordingly."
+    }
+
     this.account = {
+      accountType: account_type,
+      accountTitle: account_type_title,
+      accountMessage: account_type_message,
       publicKey: keypair.publicKey(),
       cipher,
       nonce

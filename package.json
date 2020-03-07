@@ -39,5 +39,9 @@
     "rollup-plugin-node-polyfills": "^0.2.1",
     "stellar-sdk": "^4.0.1",
     "tweetnacl": "^1.0.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "popups": "^1.1.3"
   }
 }

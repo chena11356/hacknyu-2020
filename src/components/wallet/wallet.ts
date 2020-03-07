@@ -21,6 +21,7 @@ import copyAddress from './methods/copyAddress'
 import copySecret from './methods/copySecret'
 import signOut from './methods/signOut'
 import setPrompt from './methods/setPrompt'
+import viewDetails from './methods/viewDetails'
 
 import { Prompter } from '@prompt/prompt'
 
@@ -69,6 +70,7 @@ export class Wallet {
   copyAddress = copyAddress
   copySecret = copySecret
   signOut = signOut
+  viewDetails = viewDetails
 
   // Misc methods
   setPrompt = setPrompt

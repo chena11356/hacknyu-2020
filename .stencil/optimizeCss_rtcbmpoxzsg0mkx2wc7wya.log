@@ -1,0 +1,197 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 15px;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+}
+
+input,
+select,
+button {
+  height: 30px;
+}
+
+button {
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  background-color: blue;
+  color: white;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+button.loading {
+  color: transparent;
+  pointer-events: none;
+}
+button.small {
+  font-size: 12px;
+  height: 20px;
+}
+
+:host {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 15px;
+}
+:host .prompt-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+:host .prompt {
+  background-color: white;
+  padding: 20px;
+  max-width: 350px;
+  width: 100%;
+  position: relative;
+}
+:host .prompt p {
+  margin-bottom: 10px;
+}
+:host .prompt input {
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  outline: none;
+  border: 1px solid black;
+  text-transform: uppercase;
+}
+:host .prompt input:focus {
+  border-color: blue;
+}
+:host .select-wrapper {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+:host .select-wrapper select {
+  border-color: blue;
+  padding: 0 10px;
+  min-width: 100px;
+}
+:host .select-wrapper:after, :host .select-wrapper:before {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  color: blue;
+}
+:host .select-wrapper:after {
+  content: "◀";
+  top: calc(50% - 5px);
+  -webkit-transform: translate(0, -50%) rotate(90deg);
+  transform: translate(0, -50%) rotate(90deg);
+}
+:host .select-wrapper:before {
+  content: "▶";
+  top: calc(50% + 5px);
+  -webkit-transform: translate(0, -50%) rotate(90deg);
+  transform: translate(0, -50%) rotate(90deg);
+}
+:host .actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+:host .actions button {
+  margin: 0;
+  min-width: 50px;
+}
+:host .actions .cancel {
+  background: none;
+  border: 1px solid blue;
+  color: blue;
+}
+:host .actions .submit {
+  margin-left: 10px;
+}

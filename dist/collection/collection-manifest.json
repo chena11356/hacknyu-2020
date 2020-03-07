@@ -1,0 +1,14 @@
+{
+  "entries": [
+    "components/prompt/prompt.js",
+    "components/loader/loader.js",
+    "components/wallet/wallet.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.8.9",
+    "typescriptVersion": "3.7.5"
+  },
+  "collections": [],
+  "bundles": []
+}

@@ -2,7 +2,7 @@
 
 :host {
   display: block;
-  font-family: $font-family;
+  // font-family: $font-family;
   font-size: 15px;
 
   .prompt-wrapper {
@@ -39,7 +39,7 @@
       text-transform: uppercase;
 
       &:focus {
-        border-color: blue;
+        border-color: #3279fc;
       }
     }
   }
@@ -48,7 +48,7 @@
     display: inline-flex;
 
     select {
-      border-color: blue;
+      border-color: #3279fc;
       padding: 0 10px;
       min-width: 100px;
     }
@@ -58,7 +58,7 @@
       font-size: 12px;
       position: absolute;
       right: 10px;
-      color: blue;
+      color: green;
     }
     &:after {
       content: '◀';
@@ -82,8 +82,8 @@
     }
     .cancel {
       background: none;
-      border: 1px solid blue;
-      color: blue;
+      border: 1px solid #3279fc;
+      color: #3279fc;
     }
     .submit {
       margin-left: 10px;

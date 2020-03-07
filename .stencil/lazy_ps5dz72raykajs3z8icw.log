@@ -1,0 +1,57 @@
+import { registerInstance as __stencil_registerInstance, getElement as __stencil_getElement } from "@stencil/core";
+import { h } from "@stencil/core";
+import { defer as loDefer } from 'lodash-es';
+export const Prompt = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    watchHandler(newValue, oldValue) {
+        if (newValue.show === oldValue.show)
+            return;
+        if (newValue.show) {
+            this.input = null;
+            if (newValue.options)
+                this.input = this.input || `${newValue.options[0].code}:${newValue.options[0].issuer}`;
+            else
+                loDefer(() => this.element.shadowRoot.querySelector('input').focus());
+        }
+        else {
+            this.prompter.message = null;
+            this.prompter.placeholder = null;
+            this.prompter.options = null;
+        }
+    }
+    componentDidLoad() {
+        addEventListener('keyup', (e) => {
+            if (this.prompter.show)
+                e.keyCode === 13
+                    ? this.submit()
+                    : e.keyCode === 27
+                        ? this.cancel()
+                        : null;
+        });
+    }
+    cancel() {
+        this.prompter = Object.assign(Object.assign({}, this.prompter), { show: false });
+        this.prompter.reject(null);
+    }
+    submit() {
+        this.prompter = Object.assign(Object.assign({}, this.prompter), { show: false });
+        this.prompter.resolve(this.input);
+    }
+    update(e) {
+        this.input = e.target.value.toUpperCase();
+    }
+    render() {
+        return (h("div", { class: "prompt-wrapper", style: this.prompter.show ? null : { display: 'none' } }, h("div", { class: "prompt" }, this.prompter.message ? h("p", null, this.prompter.message) : null, this.prompter.options
+            ? h("div", { class: "select-wrapper" }, h("select", { onInput: (e) => this.update(e) }, this.prompter.options.map((option) => h("option", { value: `${option.code}:${option.issuer}`, selected: this.input === `${option.code}:${option.issuer}` }, option.code))))
+                ? !this.prompter.alert
+                : h("input", { type: this.prompter.type, placeholder: this.prompter.placeholder, value: this.input, onInput: (e) => this.update(e), style: this.prompter.type === 'password' ? { 'font-size': '18px' } : null })
+            : null, h("div", { class: "actions" }, h("button", { class: "cancel", type: "button", onClick: () => this.cancel() }, "Cancel"), h("button", { class: "submit", type: "button", onClick: () => this.submit() }, "OK")))));
+    }
+    get element() { return __stencil_getElement(this); }
+    static get watchers() { return {
+        "prompter": ["watchHandler"]
+    }; }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:stellar-prompt"; }
+};
