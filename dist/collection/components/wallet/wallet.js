@@ -14,6 +14,7 @@ import setPrompt from './methods/setPrompt';
 import viewDetails from './methods/viewDetails';
 import viewTransactions from './methods/viewTransactions';
 import viewBalances from './methods/viewBalances';
+import parseBalances from './methods/parseBalances';
 export class Wallet {
     constructor() {
         this.prompter = { show: false };
@@ -33,6 +34,7 @@ export class Wallet {
         this.viewDetails = viewDetails;
         this.viewTransactions = viewTransactions;
         this.viewBalances = viewBalances;
+        this.parseBalances = parseBalances;
         // Misc methods
         this.setPrompt = setPrompt;
     }

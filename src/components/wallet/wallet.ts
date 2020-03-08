@@ -24,6 +24,7 @@ import setPrompt from './methods/setPrompt'
 import viewDetails from './methods/viewDetails'
 import viewTransactions from './methods/viewTransactions'
 import viewBalances from './methods/viewBalances'
+import parseBalances from './methods/parseBalances'
 
 import { Prompter } from '@prompt/prompt'
 
@@ -75,6 +76,7 @@ export class Wallet {
   viewDetails = viewDetails
   viewTransactions = viewTransactions
   viewBalances = viewBalances
+  parseBalances = parseBalances
 
   // Misc methods
   setPrompt = setPrompt

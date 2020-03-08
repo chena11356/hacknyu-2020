@@ -30,7 +30,7 @@ export default function render() {
                                     <div class="card-body">
                                       <h4 class="mb-3">Account Details</h4>
                                       <p>Your account key is:</p>
-                                      <p><small>{this.account.publicKey}</small></p>
+                                      <pre class="balance-pre">{this.account.publicKey}</pre>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.copyAddress()}>Copy Address</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.copySecret()}>Copy Secret</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.signOut()}>Delete Account</button>
@@ -50,7 +50,7 @@ export default function render() {
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">
                                       <h4 class="mb-3">View Balances</h4>
-                                      <pre class="account-state" id="account-state-text">{ "[List of balances]" }</pre>
+                                      <pre class="mb-3 balance-pre">{ this.parseBalances() }</pre>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.updateAccount(true)}>Update Account</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.viewBalances()}>View Balances</button>
                                     </div>

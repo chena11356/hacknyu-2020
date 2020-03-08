@@ -1,7 +1,7 @@
 {
   "entries": [
-    "components/loader/loader.js",
     "components/prompt/prompt.js",
+    "components/loader/loader.js",
     "components/wallet/wallet.js"
   ],
   "compiler": {
