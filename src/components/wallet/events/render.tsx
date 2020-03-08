@@ -16,7 +16,6 @@ export default function render() {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
       </head>,
 
-      <body class="sb-nav-fixed">
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
                 <main>
@@ -80,8 +79,9 @@ export default function render() {
                                 </div>
                             </div>
                         </div>
+
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>{this.account.tableTitle}</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" cellspacing="0">
@@ -109,55 +109,55 @@ export default function render() {
                                             <tr>
                                                 <td>Tiger Nixon</td>
                                                 <td>System Architect</td>
-                                                <td>Edinburgh</td>
+                                                <td>Main Campus</td>
                                                 <td>61</td>
                                                 <td>2011/04/25</td>
                                                 <td>$320,800</td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
+                                                <td>Custodian</td>
+                                                <td>Science Building</td>
                                                 <td>63</td>
                                                 <td>2011/07/25</td>
                                                 <td>$170,750</td>
                                             </tr>
                                             <tr>
                                                 <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
+                                                <td>Substitute Teacher</td>
+                                                <td>Science Building</td>
                                                 <td>66</td>
                                                 <td>2009/01/12</td>
                                                 <td>$86,000</td>
                                             </tr>
                                             <tr>
                                                 <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
+                                                <td>Teacher</td>
+                                                <td>Main Campus</td>
                                                 <td>22</td>
                                                 <td>2012/03/29</td>
                                                 <td>$433,060</td>
                                             </tr>
                                             <tr>
                                                 <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
+                                                <td>Teacher</td>
+                                                <td>Science Building</td>
                                                 <td>33</td>
                                                 <td>2008/11/28</td>
                                                 <td>$162,700</td>
                                             </tr>
                                             <tr>
                                                 <td>Brielle Williamson</td>
-                                                <td>Integration Specialist</td>
-                                                <td>New York</td>
+                                                <td>Principal</td>
+                                                <td>Science Building</td>
                                                 <td>61</td>
                                                 <td>2012/12/02</td>
                                                 <td>$372,000</td>
                                             </tr>
                                             <tr>
                                                 <td>Herrod Chandler</td>
-                                                <td>Sales Assistant</td>
-                                                <td>San Francisco</td>
+                                                <td>Guidance Counselor</td>
+                                                <td>Main Campus</td>
                                                 <td>59</td>
                                                 <td>2012/08/06</td>
                                                 <td>$137,500</td>
@@ -172,7 +172,7 @@ export default function render() {
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                            <div class="text-muted">Copyright &copy; Bloool 2019</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -182,8 +182,7 @@ export default function render() {
                     </div>
                 </footer>
             </div>
-        </div>
-    </body>,
+        </div>,
     ]
     : <button class="btn btn-primary" type="button" onClick={() => this.createAccount()}>{this.loading.fund ? <stellar-loader /> : null} Create Account</button>,
 

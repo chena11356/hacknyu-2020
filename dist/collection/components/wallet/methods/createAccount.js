@@ -34,18 +34,22 @@ export default async function createAccount() {
             .finally(() => this.loading = Object.assign(Object.assign({}, this.loading), { fund: false }));
         var account_type_title;
         var account_type_message;
+        var account_table_title;
         if (account_type == "FUND") {
             account_type_title = "Fund Dashboard";
             account_type_message = "Through this dashboard, you may manage your blockchain fund and analyze how schools are using your assets.";
+            account_table_title = "Schools";
         }
         else {
             account_type_title = "School Dashboard";
             account_type_message = "Through this dashboard, you may manage your school funds and appropriate them accordingly.";
+            account_table_title = "Payrolls";
         }
         this.account = {
             accountType: account_type,
             accountTitle: account_type_title,
             accountMessage: account_type_message,
+            tableTitle: account_table_title,
             publicKey: keypair.publicKey(),
             cipher,
             nonce
