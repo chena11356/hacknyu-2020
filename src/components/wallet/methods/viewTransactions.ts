@@ -1,21 +1,13 @@
 import {
-  Account,
-  TransactionBuilder,
   Transaction,
-  BASE_FEE,
   Networks,
-  Operation,
-  Asset,
   Server
 } from 'stellar-sdk'
 import {
-  has as loHas,
   each as loEach
 } from 'lodash-es'
 
 import { handleError } from '@services/error'
-import { stretchPincode } from '@services/argon2'
-import { decrypt } from '@services/tweetnacl'
 
 // Truncate decimal strings
 function tdr(str) {
@@ -27,9 +19,7 @@ function tdr(str) {
 }
 
 export default async function viewTransactions(
-  destination?: string,
-  asset?: string,
-  issuer?: string
+
 ) {
   try {
 

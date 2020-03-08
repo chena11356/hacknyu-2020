@@ -72,9 +72,13 @@ button {
   background-color: #3279fc;
   color: white;
   margin: 0;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   justify-items: center;
   padding: 0 10px;

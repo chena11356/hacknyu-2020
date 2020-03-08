@@ -1,6 +1,4 @@
 import { handleError } from '@services/error'
-import { stretchPincode } from '@services/argon2'
-import { decrypt } from '@services/tweetnacl'
 
 // Truncate decimal strings
 function tdr(str) {
@@ -12,13 +10,11 @@ function tdr(str) {
 }
 
 export default async function viewBalances(
-  destination?: string,
-  asset?: string,
-  issuer?: string
+
 ) {
   try {
 
-    var balances_json = JSON.stringify(this.account.state, null, 2);
+    // var balances_json = JSON.stringify(this.account.state, null, 2);
     var cur_balance = "";
     var cur_asset_code = "";
     var cur_asset_issuer = "";

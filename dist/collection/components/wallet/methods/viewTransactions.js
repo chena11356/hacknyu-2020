@@ -9,7 +9,7 @@ function tdr(str) {
         }
     }
 }
-export default async function viewTransactions(destination, asset, issuer) {
+export default async function viewTransactions() {
     try {
         var cur_account = this.account.publicKey;
         // const account = 'GBZWOEGPINOUOYYNWP5RX7RSKN2ICX32IP5CLMLKGAVG4IDP62Q56KRG'

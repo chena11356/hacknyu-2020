@@ -1,32 +1,12 @@
-# Stellar Demo Wallet
+# Bloool
 
-This Stellar Demo Wallet app is the application companion to the [Build a Stellar Wallet](https://github.com/tyvdh/tutorials-build-a-stellar-wallet) tutorial series. This is a [Stencil](https://stenciljs.com) project intented to kickstart your wallet project. Feel free to clone or copy any pieces which may be helpful.
-
-[View a demo](https://stellar-demo-wallet.now.sh/)
+We integrate blockchain technology with U.S. educational policy to allow for greater transparency and accessibility to school budgeting decisions and federal funding. With our interface, schools and government funds can keep track of where their assets go and transfer these assets quickly and securely. We aim to provide a platform by which policy analysts may evaluate the impact of various educational funding bills and by which the public may hold institutions accountable for efficiently allocating their taxpayer dollars.
 
 ## Getting Started
 
-To start building with this project clone this repo and install the deps:
-
-```bash
-npm i
-```
-
-and run:
+To start building with this project clone this repo and run:
 
 ```bash
 npm start
 ```
-
-To build the app for production, run:
-
-```bash
-npm run build
-```
-
 ---
-
-### Helpful links:
-- [https://www.stellar.org/developers](https://www.stellar.org/developers)
-- [https://stellar.github.io/js-stellar-sdk/](https://stellar.github.io/js-stellar-sdk/)
-- [https://github.com/stellar/js-stellar-sdk](https://github.com/stellar/js-stellar-sdk)

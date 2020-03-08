@@ -7,9 +7,9 @@ function tdr(str) {
         }
     }
 }
-export default async function viewBalances(destination, asset, issuer) {
+export default async function viewBalances() {
     try {
-        var balances_json = JSON.stringify(this.account.state, null, 2);
+        // var balances_json = JSON.stringify(this.account.state, null, 2);
         var cur_balance = "";
         var cur_asset_code = "";
         var cur_asset_issuer = "";

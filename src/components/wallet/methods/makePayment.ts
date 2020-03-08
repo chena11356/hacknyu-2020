@@ -1,16 +1,13 @@
 import {
   Account,
   TransactionBuilder,
-  Transaction,
   BASE_FEE,
   Networks,
   Operation,
-  Asset,
-  Server
+  Asset
 } from 'stellar-sdk'
 import {
-  has as loHas,
-  each as loEach
+  has as loHas
 } from 'lodash-es'
 
 import { handleError } from '@services/error'
