@@ -10,6 +10,8 @@ import copySecret from './methods/copySecret';
 import signOut from './methods/signOut';
 import setPrompt from './methods/setPrompt';
 import viewDetails from './methods/viewDetails';
+import viewTransactions from './methods/viewTransactions';
+import viewBalances from './methods/viewBalances';
 import { Prompter } from '@prompt/prompt';
 interface StellarAccount {
     publicKey: string;
@@ -45,6 +47,8 @@ export declare class Wallet {
     copySecret: typeof copySecret;
     signOut: typeof signOut;
     viewDetails: typeof viewDetails;
+    viewTransactions: typeof viewTransactions;
+    viewBalances: typeof viewBalances;
     setPrompt: typeof setPrompt;
 }
 export {};

@@ -22,6 +22,8 @@ import copySecret from './methods/copySecret'
 import signOut from './methods/signOut'
 import setPrompt from './methods/setPrompt'
 import viewDetails from './methods/viewDetails'
+import viewTransactions from './methods/viewTransactions'
+import viewBalances from './methods/viewBalances'
 
 import { Prompter } from '@prompt/prompt'
 
@@ -71,9 +73,12 @@ export class Wallet {
   copySecret = copySecret
   signOut = signOut
   viewDetails = viewDetails
+  viewTransactions = viewTransactions
+  viewBalances = viewBalances
 
   // Misc methods
   setPrompt = setPrompt
+
 }
 
 Wallet.prototype.componentWillLoad = componentWillLoad

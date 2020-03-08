@@ -1,12 +1,17 @@
 import {
   Account,
   TransactionBuilder,
+  Transaction,
   BASE_FEE,
   Networks,
   Operation,
-  Asset
+  Asset,
+  Server
 } from 'stellar-sdk'
-import { has as loHas } from 'lodash-es'
+import {
+  has as loHas,
+  each as loEach
+} from 'lodash-es'
 
 import { handleError } from '@services/error'
 import { stretchPincode } from '@services/argon2'
@@ -18,6 +23,7 @@ export default async function makePayment(
   issuer?: string
 ) {
   try {
+
     let instructions
 
     if (
@@ -29,14 +35,28 @@ export default async function makePayment(
     }
 
     else {
-      instructions = await this.setPrompt({message: '{Amount} {Asset} {Destination}'})
+
+      if (this.account.accountType == "FUND") {
+          instructions = await this.setPrompt({message: '{Amount} {Asset} {Destination of assets (school)}'})
+      } else {
+        instructions = await this.setPrompt({message: '{Amount} {Asset} {Destination of assets (teacher salaries, facilities, etc.)}'})
+      }
       instructions = instructions.split(' ')
 
-      if (!/xlm/gi.test(instructions[1]))
-        instructions[3] = await this.setPrompt({
-          message: `Who issues the ${instructions[1]} asset?`,
-          placeholder: 'Enter ME to refer to yourself'
-        })
+      if (this.account.accountType == "FUND") {
+          if (!/xlm/gi.test(instructions[1]))
+            instructions[3] = await this.setPrompt({
+              message: `Which fund issues the ${instructions[1]} asset?`,
+              placeholder: 'Enter ME to refer to the current fund'
+            })
+      } else {
+          if (!/xlm/gi.test(instructions[1]))
+            instructions[3] = await this.setPrompt({
+              message: `Which school issues the ${instructions[1]} asset?`,
+              placeholder: 'Enter ME to refer to the current school'
+            })
+      }
+
     }
 
     const pincode = await this.setPrompt({

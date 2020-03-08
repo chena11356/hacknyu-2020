@@ -35,27 +35,31 @@ export default async function createAccount() {
         var account_type_title;
         var account_type_message;
         var account_table_title;
+        var pie_chart_url;
         if (account_type == "FUND") {
             account_type_title = "Fund Dashboard";
             account_type_message = "Through this dashboard, you may manage your blockchain fund and analyze how schools are using your assets.";
             account_table_title = "Schools";
+            pie_chart_url = "https://i.ibb.co/m8QLLWj/pie-Chart-Example-Fund.png";
         }
         else {
             account_type_title = "School Dashboard";
             account_type_message = "Through this dashboard, you may manage your school funds and appropriate them accordingly.";
             account_table_title = "Payrolls";
+            pie_chart_url = "https://i.ibb.co/LJd5Tqh/pie-Chart-Example.png";
         }
         this.account = {
             accountType: account_type,
             accountTitle: account_type_title,
             accountMessage: account_type_message,
             tableTitle: account_table_title,
+            pieChartURL: pie_chart_url,
             publicKey: keypair.publicKey(),
             cipher,
             nonce
         };
         set('WALLET[keystore]', btoa(JSON.stringify(this.account)));
-        this.updateAccount();
+        this.updateAccount(false);
     }
     catch (err) {
         this.error = handleError(err);

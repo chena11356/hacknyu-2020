@@ -17,6 +17,7 @@ export default async function trustAsset(
   pincode_stretched?: Uint8Array
 ) {
   try {
+
     let instructions
 
     if (
@@ -25,7 +26,11 @@ export default async function trustAsset(
     ) instructions = [asset, issuer]
 
     else {
-      instructions = await this.setPrompt({message: '{Asset} {Issuer}'})
+      if (this.account.accountType == "FUND") {
+          instructions = await this.setPrompt({message: '{Asset} {Key of source of assets (federal grants, taxes, etc.)}'})
+      } else {
+        instructions = await this.setPrompt({message: '{Asset} {Key of fund}'})
+      }
       instructions = instructions.split(' ')
     }
 

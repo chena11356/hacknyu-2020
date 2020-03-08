@@ -1,4 +1,4 @@
-import { h, r as registerInstance } from './core-a2a3688f.js';
+import { h, r as registerInstance } from './core-79b97f50.js';
 import { c as createCommonjsModule, a as commonjsGlobal, b as commonjsRequire, u as unwrapExports, g as getCjsExportFromNamespace } from './_commonjsHelpers-0c4b6f40.js';
 import { g as global, l as loGet, a as loMap, b as loOmit, c as loFindIndex, d as loEach, e as loHas } from './lodash-abc806aa.js';
 
@@ -1638,7 +1638,7 @@ return Promise$1;
 
 
 
-//# sourceMappingURL=es6-promise.map
+
 });
 
 var _args = [
@@ -1927,7 +1927,7 @@ var Horizon;
         TransactionFailedResultCodes["TX_BAD_AUTH_EXTRA"] = "tx_bad_auth_extra";
     })(TransactionFailedResultCodes = Horizon.TransactionFailedResultCodes || (Horizon.TransactionFailedResultCodes = {}));
 })(Horizon = exports.Horizon || (exports.Horizon = {}));
-//# sourceMappingURL=horizon_api.js.map
+
 });
 
 const horizon_api$1 = unwrapExports(horizon_api);
@@ -4789,12 +4789,10 @@ const bufferEs6 = /*#__PURE__*/Object.freeze({
     kMaxLength: _kMaxLength
 });
 
-const buffer = getCjsExportFromNamespace(bufferEs6);
-
 var safeBuffer = createCommonjsModule(function (module, exports) {
 /* eslint-disable node/no-deprecated-api */
 
-var Buffer = buffer.Buffer;
+var Buffer = bufferEs6.Buffer;
 
 // alternative to using Object.keys for old browsers
 function copyProps (src, dst) {
@@ -4803,10 +4801,10 @@ function copyProps (src, dst) {
   }
 }
 if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = buffer;
+  module.exports = bufferEs6;
 } else {
   // Copy properties from require('buffer')
-  copyProps(buffer, exports);
+  copyProps(bufferEs6, exports);
   exports.Buffer = SafeBuffer;
 }
 
@@ -4852,7 +4850,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   if (typeof size !== 'number') {
     throw new TypeError('Argument must be a number')
   }
-  return buffer.SlowBuffer(size)
+  return bufferEs6.SlowBuffer(size)
 };
 });
 var safeBuffer_1 = safeBuffer.Buffer;
@@ -9381,7 +9379,7 @@ const crcjam = defineCrc('jam', function(buf, previous = -1) {
   return crc;
 });
 
-const index = {
+const _crc = {
   crc1,
   crc8,
   crc81wire,
@@ -9394,22 +9392,6 @@ const index = {
   crc32,
   crcjam,
 };
-
-const crc = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    crc1: crc1,
-    crc8: crc8,
-    crc81wire: crc81wire,
-    crc16: crc16,
-    crc16ccitt: crc16ccitt,
-    crc16modbus: crc16modbus,
-    crc16xmodem: crc16xmodem,
-    crc16kermit: crc16kermit,
-    crc24: crc24,
-    crc32: crc32,
-    crcjam: crcjam,
-    'default': index
-});
 
 /**
  * Checks if `value` is `null`.
@@ -9460,8 +9442,6 @@ function isString(value) {
 }
 
 var isString_1 = isString;
-
-const _crc = getCjsExportFromNamespace(crc);
 
 var strkey = createCommonjsModule(function (module, exports) {
 'use strict';
@@ -16948,8 +16928,6 @@ var es6_map = _collection(MAP, function (get) {
   }
 }, _collectionStrong, true);
 
-const es6_object_toString$1 = getCjsExportFromNamespace(es6_object_toString);
-
 var map = _core.Map;
 
 /**
@@ -18289,7 +18267,7 @@ Object.keys(config_1).forEach(function (key) {
 });
 });
 
-const index$1 = unwrapExports(lib);
+const index = unwrapExports(lib);
 
 var stellarXdr_generated = createCommonjsModule(function (module, exports) {
 "use strict";
@@ -27617,7 +27595,7 @@ function createPassiveOffer(opts) {
 }
 });
 
-const index$2 = unwrapExports(operations);
+const index$1 = unwrapExports(operations);
 var operations_1 = operations.createPassiveSellOffer;
 var operations_2 = operations.manageSellOffer;
 var operations_3 = operations.setOptions;
@@ -29340,7 +29318,7 @@ exports.xdr = _stellarXdr_generated2.default;
 exports.default = module.exports;
 });
 
-const index$3 = unwrapExports(lib$1);
+const index$2 = unwrapExports(lib$1);
 var lib_1 = lib$1.StrKey;
 var lib_2 = lib$1.Networks;
 var lib_3 = lib$1.Network;
@@ -29363,13 +29341,11 @@ var lib_19 = lib$1.sign;
 var lib_20 = lib$1.hash;
 var lib_21 = lib$1.xdr;
 
-const tslib_1 = getCjsExportFromNamespace(tslib_es6);
-
 var account_response = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var forIn_1$1 = tslib_1.__importDefault(forIn_1);
+var forIn_1$1 = tslib_es6.__importDefault(forIn_1);
 
 var AccountResponse = (function () {
     function AccountResponse(response) {
@@ -29392,7 +29368,7 @@ var AccountResponse = (function () {
     return AccountResponse;
 }());
 exports.AccountResponse = AccountResponse;
-//# sourceMappingURL=account_response.js.map
+
 });
 
 const account_response$1 = unwrapExports(account_response);
@@ -29403,7 +29379,7 @@ var errors = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 
 var NetworkError = (function (_super) {
-    tslib_1.__extends(NetworkError, _super);
+    tslib_es6.__extends(NetworkError, _super);
     function NetworkError(message, response) {
         var _newTarget = this.constructor;
         var _this = this;
@@ -29421,7 +29397,7 @@ var NetworkError = (function (_super) {
 }(Error));
 exports.NetworkError = NetworkError;
 var NotFoundError = (function (_super) {
-    tslib_1.__extends(NotFoundError, _super);
+    tslib_es6.__extends(NotFoundError, _super);
     function NotFoundError(message, response) {
         var _newTarget = this.constructor;
         var _this = this;
@@ -29436,7 +29412,7 @@ var NotFoundError = (function (_super) {
 }(NetworkError));
 exports.NotFoundError = NotFoundError;
 var BadRequestError = (function (_super) {
-    tslib_1.__extends(BadRequestError, _super);
+    tslib_es6.__extends(BadRequestError, _super);
     function BadRequestError(message, response) {
         var _newTarget = this.constructor;
         var _this = this;
@@ -29451,7 +29427,7 @@ var BadRequestError = (function (_super) {
 }(NetworkError));
 exports.BadRequestError = BadRequestError;
 var BadResponseError = (function (_super) {
-    tslib_1.__extends(BadResponseError, _super);
+    tslib_es6.__extends(BadResponseError, _super);
     function BadResponseError(message, response) {
         var _newTarget = this.constructor;
         var _this = this;
@@ -29466,7 +29442,7 @@ var BadResponseError = (function (_super) {
 }(NetworkError));
 exports.BadResponseError = BadResponseError;
 var InvalidSep10ChallengeError = (function (_super) {
-    tslib_1.__extends(InvalidSep10ChallengeError, _super);
+    tslib_es6.__extends(InvalidSep10ChallengeError, _super);
     function InvalidSep10ChallengeError(message) {
         var _newTarget = this.constructor;
         var _this = this;
@@ -29480,7 +29456,7 @@ var InvalidSep10ChallengeError = (function (_super) {
     return InvalidSep10ChallengeError;
 }(Error));
 exports.InvalidSep10ChallengeError = InvalidSep10ChallengeError;
-//# sourceMappingURL=errors.js.map
+
 });
 
 const errors$1 = unwrapExports(errors);
@@ -29494,7 +29470,7 @@ var config_1$1 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var clone_1$1 = tslib_1.__importDefault(clone_1);
+var clone_1$1 = tslib_es6.__importDefault(clone_1);
 var defaultConfig = {
     allowHttp: false,
     timeout: 0,
@@ -29521,7 +29497,7 @@ var Config = (function () {
     return Config;
 }());
 exports.Config = Config;
-//# sourceMappingURL=config.js.map
+
 });
 
 const config$2 = unwrapExports(config_1$1);
@@ -35299,8 +35275,8 @@ var horizon_axios_client = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var axios_1 = tslib_1.__importDefault(axios$1);
-var urijs_1 = tslib_1.__importDefault(URI);
+var axios_1 = tslib_es6.__importDefault(axios$1);
+var urijs_1 = tslib_es6.__importDefault(URI);
 var version = require$$1.version;
 exports.SERVER_TIME_MAP = {};
 var HorizonAxiosClient = axios_1.default.create({
@@ -35338,7 +35314,7 @@ function getCurrentServerTime(hostname) {
     return currentTime - localTimeRecorded + serverTime;
 }
 exports.getCurrentServerTime = getCurrentServerTime;
-//# sourceMappingURL=horizon_axios_client.js.map
+
 });
 
 const horizon_axios_client$1 = unwrapExports(horizon_axios_client);
@@ -40846,11 +40822,11 @@ var call_builder = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var detect_node_1 = tslib_1.__importDefault(browser$2);
-var urijs_1 = tslib_1.__importDefault(URI);
-var URITemplate_1 = tslib_1.__importDefault(URITemplate);
+var detect_node_1 = tslib_es6.__importDefault(browser$2);
+var urijs_1 = tslib_es6.__importDefault(URI);
+var URITemplate_1 = tslib_es6.__importDefault(URITemplate);
 
-var horizon_axios_client_1 = tslib_1.__importDefault(horizon_axios_client);
+var horizon_axios_client_1 = tslib_es6.__importDefault(horizon_axios_client);
 var version = require$$1.version;
 var JOINABLE = ["transaction"];
 var EventSource;
@@ -40970,9 +40946,9 @@ var CallBuilder = (function () {
         var _this = this;
         return function (opts) {
             if (opts === void 0) { opts = {}; }
-            return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            return tslib_es6.__awaiter(_this, void 0, void 0, function () {
                 var uri, template, r;
-                return tslib_1.__generator(this, function (_a) {
+                return tslib_es6.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             if (link.templated) {
@@ -41005,7 +40981,7 @@ var CallBuilder = (function () {
             }
             if (included && JOINABLE.indexOf(key) >= 0) {
                 var record_1 = this_1._parseRecord(json[key]);
-                json[key] = function () { return tslib_1.__awaiter(_this, void 0, void 0, function () { return tslib_1.__generator(this, function (_a) {
+                json[key] = function () { return tslib_es6.__awaiter(_this, void 0, void 0, function () { return tslib_es6.__generator(this, function (_a) {
                     return [2, record_1];
                 }); }); };
             }
@@ -41021,9 +40997,9 @@ var CallBuilder = (function () {
         return json;
     };
     CallBuilder.prototype._sendNormalRequest = function (initialUrl) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var url;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 url = initialUrl;
                 if (url.authority() === "") {
                     url = url.authority(this.url.authority());
@@ -41051,9 +41027,9 @@ var CallBuilder = (function () {
         }
         return {
             records: json._embedded.records,
-            next: function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            next: function () { return tslib_es6.__awaiter(_this, void 0, void 0, function () {
                 var r;
-                return tslib_1.__generator(this, function (_a) {
+                return tslib_es6.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4, this._sendNormalRequest(urijs_1.default(json._links.next.href))];
                         case 1:
@@ -41062,9 +41038,9 @@ var CallBuilder = (function () {
                     }
                 });
             }); },
-            prev: function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            prev: function () { return tslib_es6.__awaiter(_this, void 0, void 0, function () {
                 var r;
-                return tslib_1.__generator(this, function (_a) {
+                return tslib_es6.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4, this._sendNormalRequest(urijs_1.default(json._links.prev.href))];
                         case 1:
@@ -41076,8 +41052,8 @@ var CallBuilder = (function () {
         };
     };
     CallBuilder.prototype._handleNetworkError = function (error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
+            return tslib_es6.__generator(this, function (_a) {
                 if (error.response && error.response.status && error.response.statusText) {
                     switch (error.response.status) {
                         case 404:
@@ -41096,7 +41072,7 @@ var CallBuilder = (function () {
     return CallBuilder;
 }());
 exports.CallBuilder = CallBuilder;
-//# sourceMappingURL=call_builder.js.map
+
 });
 
 const call_builder$1 = unwrapExports(call_builder);
@@ -41108,7 +41084,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var AccountCallBuilder = (function (_super) {
-    tslib_1.__extends(AccountCallBuilder, _super);
+    tslib_es6.__extends(AccountCallBuilder, _super);
     function AccountCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("accounts");
@@ -41130,7 +41106,7 @@ var AccountCallBuilder = (function (_super) {
     return AccountCallBuilder;
 }(call_builder.CallBuilder));
 exports.AccountCallBuilder = AccountCallBuilder;
-//# sourceMappingURL=account_call_builder.js.map
+
 });
 
 const account_call_builder$1 = unwrapExports(account_call_builder);
@@ -41142,7 +41118,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var AssetsCallBuilder = (function (_super) {
-    tslib_1.__extends(AssetsCallBuilder, _super);
+    tslib_es6.__extends(AssetsCallBuilder, _super);
     function AssetsCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("assets");
@@ -41159,7 +41135,7 @@ var AssetsCallBuilder = (function (_super) {
     return AssetsCallBuilder;
 }(call_builder.CallBuilder));
 exports.AssetsCallBuilder = AssetsCallBuilder;
-//# sourceMappingURL=assets_call_builder.js.map
+
 });
 
 const assets_call_builder$1 = unwrapExports(assets_call_builder);
@@ -41171,7 +41147,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var EffectCallBuilder = (function (_super) {
-    tslib_1.__extends(EffectCallBuilder, _super);
+    tslib_es6.__extends(EffectCallBuilder, _super);
     function EffectCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("effects");
@@ -41200,7 +41176,7 @@ var EffectCallBuilder = (function (_super) {
     return EffectCallBuilder;
 }(call_builder.CallBuilder));
 exports.EffectCallBuilder = EffectCallBuilder;
-//# sourceMappingURL=effect_call_builder.js.map
+
 });
 
 const effect_call_builder$1 = unwrapExports(effect_call_builder);
@@ -41212,7 +41188,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var FriendbotBuilder = (function (_super) {
-    tslib_1.__extends(FriendbotBuilder, _super);
+    tslib_es6.__extends(FriendbotBuilder, _super);
     function FriendbotBuilder(serverUrl, address) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("friendbot");
@@ -41222,7 +41198,7 @@ var FriendbotBuilder = (function (_super) {
     return FriendbotBuilder;
 }(call_builder.CallBuilder));
 exports.FriendbotBuilder = FriendbotBuilder;
-//# sourceMappingURL=friendbot_builder.js.map
+
 });
 
 const friendbot_builder$1 = unwrapExports(friendbot_builder);
@@ -41234,7 +41210,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var LedgerCallBuilder = (function (_super) {
-    tslib_1.__extends(LedgerCallBuilder, _super);
+    tslib_es6.__extends(LedgerCallBuilder, _super);
     function LedgerCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("ledgers");
@@ -41247,7 +41223,7 @@ var LedgerCallBuilder = (function (_super) {
     return LedgerCallBuilder;
 }(call_builder.CallBuilder));
 exports.LedgerCallBuilder = LedgerCallBuilder;
-//# sourceMappingURL=ledger_call_builder.js.map
+
 });
 
 const ledger_call_builder$1 = unwrapExports(ledger_call_builder);
@@ -41259,7 +41235,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var OfferCallBuilder = (function (_super) {
-    tslib_1.__extends(OfferCallBuilder, _super);
+    tslib_es6.__extends(OfferCallBuilder, _super);
     function OfferCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("offers");
@@ -41299,7 +41275,7 @@ var OfferCallBuilder = (function (_super) {
     return OfferCallBuilder;
 }(call_builder.CallBuilder));
 exports.OfferCallBuilder = OfferCallBuilder;
-//# sourceMappingURL=offer_call_builder.js.map
+
 });
 
 const offer_call_builder$1 = unwrapExports(offer_call_builder);
@@ -41311,7 +41287,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var OperationCallBuilder = (function (_super) {
-    tslib_1.__extends(OperationCallBuilder, _super);
+    tslib_es6.__extends(OperationCallBuilder, _super);
     function OperationCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("operations");
@@ -41345,7 +41321,7 @@ var OperationCallBuilder = (function (_super) {
     return OperationCallBuilder;
 }(call_builder.CallBuilder));
 exports.OperationCallBuilder = OperationCallBuilder;
-//# sourceMappingURL=operation_call_builder.js.map
+
 });
 
 const operation_call_builder$1 = unwrapExports(operation_call_builder);
@@ -41357,7 +41333,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var OrderbookCallBuilder = (function (_super) {
-    tslib_1.__extends(OrderbookCallBuilder, _super);
+    tslib_es6.__extends(OrderbookCallBuilder, _super);
     function OrderbookCallBuilder(serverUrl, selling, buying) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("order_book");
@@ -41382,7 +41358,7 @@ var OrderbookCallBuilder = (function (_super) {
     return OrderbookCallBuilder;
 }(call_builder.CallBuilder));
 exports.OrderbookCallBuilder = OrderbookCallBuilder;
-//# sourceMappingURL=orderbook_call_builder.js.map
+
 });
 
 const orderbook_call_builder$1 = unwrapExports(orderbook_call_builder);
@@ -41394,7 +41370,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var PathCallBuilder = (function (_super) {
-    tslib_1.__extends(PathCallBuilder, _super);
+    tslib_es6.__extends(PathCallBuilder, _super);
     function PathCallBuilder(serverUrl, source, destination, destinationAsset, destinationAmount) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("paths");
@@ -41414,7 +41390,7 @@ var PathCallBuilder = (function (_super) {
     return PathCallBuilder;
 }(call_builder.CallBuilder));
 exports.PathCallBuilder = PathCallBuilder;
-//# sourceMappingURL=path_call_builder.js.map
+
 });
 
 const path_call_builder$1 = unwrapExports(path_call_builder);
@@ -41426,7 +41402,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var PaymentCallBuilder = (function (_super) {
-    tslib_1.__extends(PaymentCallBuilder, _super);
+    tslib_es6.__extends(PaymentCallBuilder, _super);
     function PaymentCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("payments");
@@ -41451,7 +41427,7 @@ var PaymentCallBuilder = (function (_super) {
     return PaymentCallBuilder;
 }(call_builder.CallBuilder));
 exports.PaymentCallBuilder = PaymentCallBuilder;
-//# sourceMappingURL=payment_call_builder.js.map
+
 });
 
 const payment_call_builder$1 = unwrapExports(payment_call_builder);
@@ -41463,7 +41439,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var StrictReceivePathCallBuilder = (function (_super) {
-    tslib_1.__extends(StrictReceivePathCallBuilder, _super);
+    tslib_es6.__extends(StrictReceivePathCallBuilder, _super);
     function StrictReceivePathCallBuilder(serverUrl, source, destinationAsset, destinationAmount) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("paths/strict-receive");
@@ -41495,7 +41471,7 @@ var StrictReceivePathCallBuilder = (function (_super) {
     return StrictReceivePathCallBuilder;
 }(call_builder.CallBuilder));
 exports.StrictReceivePathCallBuilder = StrictReceivePathCallBuilder;
-//# sourceMappingURL=strict_receive_path_call_builder.js.map
+
 });
 
 const strict_receive_path_call_builder$1 = unwrapExports(strict_receive_path_call_builder);
@@ -41507,7 +41483,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var StrictSendPathCallBuilder = (function (_super) {
-    tslib_1.__extends(StrictSendPathCallBuilder, _super);
+    tslib_es6.__extends(StrictSendPathCallBuilder, _super);
     function StrictSendPathCallBuilder(serverUrl, sourceAsset, sourceAmount, destination) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("paths/strict-send");
@@ -41539,7 +41515,7 @@ var StrictSendPathCallBuilder = (function (_super) {
     return StrictSendPathCallBuilder;
 }(call_builder.CallBuilder));
 exports.StrictSendPathCallBuilder = StrictSendPathCallBuilder;
-//# sourceMappingURL=strict_send_path_call_builder.js.map
+
 });
 
 const strict_send_path_call_builder$1 = unwrapExports(strict_send_path_call_builder);
@@ -41560,7 +41536,7 @@ var allowedResolutions = [
     604800000,
 ];
 var TradeAggregationCallBuilder = (function (_super) {
-    tslib_1.__extends(TradeAggregationCallBuilder, _super);
+    tslib_es6.__extends(TradeAggregationCallBuilder, _super);
     function TradeAggregationCallBuilder(serverUrl, base, counter, start_time, end_time, resolution, offset) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("trade_aggregations");
@@ -41617,7 +41593,7 @@ var TradeAggregationCallBuilder = (function (_super) {
     return TradeAggregationCallBuilder;
 }(call_builder.CallBuilder));
 exports.TradeAggregationCallBuilder = TradeAggregationCallBuilder;
-//# sourceMappingURL=trade_aggregation_call_builder.js.map
+
 });
 
 const trade_aggregation_call_builder$1 = unwrapExports(trade_aggregation_call_builder);
@@ -41629,7 +41605,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var TradesCallBuilder = (function (_super) {
-    tslib_1.__extends(TradesCallBuilder, _super);
+    tslib_es6.__extends(TradesCallBuilder, _super);
     function TradesCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("trades");
@@ -41665,7 +41641,7 @@ var TradesCallBuilder = (function (_super) {
     return TradesCallBuilder;
 }(call_builder.CallBuilder));
 exports.TradesCallBuilder = TradesCallBuilder;
-//# sourceMappingURL=trades_call_builder.js.map
+
 });
 
 const trades_call_builder$1 = unwrapExports(trades_call_builder);
@@ -41677,7 +41653,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var TransactionCallBuilder = (function (_super) {
-    tslib_1.__extends(TransactionCallBuilder, _super);
+    tslib_es6.__extends(TransactionCallBuilder, _super);
     function TransactionCallBuilder(serverUrl) {
         var _this = _super.call(this, serverUrl) || this;
         _this.url.segment("transactions");
@@ -41704,7 +41680,7 @@ var TransactionCallBuilder = (function (_super) {
     return TransactionCallBuilder;
 }(call_builder.CallBuilder));
 exports.TransactionCallBuilder = TransactionCallBuilder;
-//# sourceMappingURL=transaction_call_builder.js.map
+
 });
 
 const transaction_call_builder$1 = unwrapExports(transaction_call_builder);
@@ -41714,13 +41690,11 @@ var server = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var bignumber_js_1 = tslib_1.__importDefault(bignumber);
-var isEmpty_1$1 = tslib_1.__importDefault(isEmpty_1);
-var merge_1$1 = tslib_1.__importDefault(merge_1);
+var bignumber_js_1 = tslib_es6.__importDefault(bignumber);
+var isEmpty_1$1 = tslib_es6.__importDefault(isEmpty_1);
+var merge_1$1 = tslib_es6.__importDefault(merge_1);
 
-var urijs_1 = tslib_1.__importDefault(URI);
-
-
+var urijs_1 = tslib_es6.__importDefault(URI);
 
 
 
@@ -41738,7 +41712,9 @@ var urijs_1 = tslib_1.__importDefault(URI);
 
 
 
-var horizon_axios_client_1 = tslib_1.__importStar(horizon_axios_client);
+
+
+var horizon_axios_client_1 = tslib_es6.__importStar(horizon_axios_client);
 exports.SUBMIT_TRANSACTION_TIMEOUT = 60 * 1000;
 var STROOPS_IN_LUMEN = 10000000;
 function _getAmountInLumens(amt) {
@@ -41770,9 +41746,9 @@ var Server = (function () {
     }
     Server.prototype.fetchTimebounds = function (seconds, _isRetry) {
         if (_isRetry === void 0) { _isRetry = false; }
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var currentTime;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         currentTime = horizon_axios_client_1.getCurrentServerTime(this.serverURL.hostname());
@@ -41798,9 +41774,9 @@ var Server = (function () {
         });
     };
     Server.prototype.fetchBaseFee = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var response;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4, this.feeStats()];
                     case 1:
@@ -41811,9 +41787,9 @@ var Server = (function () {
         });
     };
     Server.prototype.feeStats = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var cb;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 cb = new call_builder.CallBuilder(urijs_1.default(this.serverURL));
                 cb.filter.push(["fee_stats"]);
                 return [2, cb.call()];
@@ -41821,9 +41797,9 @@ var Server = (function () {
         });
     };
     Server.prototype.submitTransaction = function (transaction) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var tx;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 tx = encodeURIComponent(transaction
                     .toEnvelope()
                     .toXDR()
@@ -41982,9 +41958,9 @@ var Server = (function () {
         return new assets_call_builder.AssetsCallBuilder(urijs_1.default(this.serverURL));
     };
     Server.prototype.loadAccount = function (accountId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var res;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4, this.accounts()
                             .accountId(accountId)
@@ -42002,7 +41978,7 @@ var Server = (function () {
     return Server;
 }());
 exports.Server = Server;
-//# sourceMappingURL=server.js.map
+
 });
 
 const server$1 = unwrapExports(server);
@@ -46060,8 +46036,8 @@ var stellar_toml_resolver = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var axios_1 = tslib_1.__importDefault(axios$1);
-var toml_1 = tslib_1.__importDefault(toml);
+var axios_1 = tslib_es6.__importDefault(axios$1);
+var toml_1 = tslib_es6.__importDefault(toml);
 
 exports.STELLAR_TOML_MAX_SIZE = 100 * 1024;
 var CancelToken = axios_1.default.CancelToken;
@@ -46070,9 +46046,9 @@ var StellarTomlResolver = (function () {
     }
     StellarTomlResolver.resolve = function (domain, opts) {
         if (opts === void 0) { opts = {}; }
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var allowHttp, timeout, protocol;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 allowHttp = typeof opts.allowHttp === "undefined"
                     ? config_1$1.Config.isAllowHttp()
                     : opts.allowHttp;
@@ -46111,7 +46087,7 @@ var StellarTomlResolver = (function () {
     return StellarTomlResolver;
 }());
 exports.StellarTomlResolver = StellarTomlResolver;
-//# sourceMappingURL=stellar_toml_resolver.js.map
+
 });
 
 const stellar_toml_resolver$1 = unwrapExports(stellar_toml_resolver);
@@ -46122,9 +46098,9 @@ var federation_server = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var axios_1 = tslib_1.__importDefault(axios$1);
+var axios_1 = tslib_es6.__importDefault(axios$1);
 
-var urijs_1 = tslib_1.__importDefault(URI);
+var urijs_1 = tslib_es6.__importDefault(URI);
 
 
 
@@ -46145,9 +46121,9 @@ var FederationServer = (function () {
     }
     FederationServer.resolve = function (value, opts) {
         if (opts === void 0) { opts = {}; }
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var addressParts, domain, federationServer;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (value.indexOf("*") < 0) {
@@ -46171,9 +46147,9 @@ var FederationServer = (function () {
     };
     FederationServer.createForDomain = function (domain, opts) {
         if (opts === void 0) { opts = {}; }
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var tomlObject;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4, stellar_toml_resolver.StellarTomlResolver.resolve(domain, opts)];
                     case 1:
@@ -46187,9 +46163,9 @@ var FederationServer = (function () {
         });
     };
     FederationServer.prototype.resolveAddress = function (address) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var stellarAddress, url;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 stellarAddress = address;
                 if (address.indexOf("*") < 0) {
                     if (!this.domain) {
@@ -46203,27 +46179,27 @@ var FederationServer = (function () {
         });
     };
     FederationServer.prototype.resolveAccountId = function (accountId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var url;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 url = this.serverURL.query({ type: "id", q: accountId });
                 return [2, this._sendRequest(url)];
             });
         });
     };
     FederationServer.prototype.resolveTransactionId = function (transactionId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var url;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 url = this.serverURL.query({ type: "txid", q: transactionId });
                 return [2, this._sendRequest(url)];
             });
         });
     };
     FederationServer.prototype._sendRequest = function (url) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib_es6.__awaiter(this, void 0, void 0, function () {
             var timeout;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib_es6.__generator(this, function (_a) {
                 timeout = this.timeout;
                 return [2, axios_1.default
                         .get(url.toString(), {
@@ -46256,7 +46232,7 @@ var FederationServer = (function () {
     return FederationServer;
 }());
 exports.FederationServer = FederationServer;
-//# sourceMappingURL=federation_server.js.map
+
 });
 
 const federation_server$1 = unwrapExports(federation_server);
@@ -46320,8 +46296,8 @@ var utils$1 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 
-var clone_1$1 = tslib_1.__importDefault(clone_1);
-var randombytes_1 = tslib_1.__importDefault(browser$3);
+var clone_1$1 = tslib_es6.__importDefault(clone_1);
+var randombytes_1 = tslib_es6.__importDefault(browser$3);
 
 
 var Utils;
@@ -46429,7 +46405,7 @@ var Utils;
         if (clientSigners.size === 0) {
             throw new errors.InvalidSep10ChallengeError("No verifiable client signers provided, at least one G... address must be provided");
         }
-        var allSigners = tslib_1.__spreadArrays([
+        var allSigners = tslib_es6.__spreadArrays([
             serverKP.publicKey()
         ], Array.from(clientSigners));
         var signersFound = gatherTxSigners(tx, allSigners);
@@ -46502,7 +46478,7 @@ var Utils;
         return (now >= Number.parseInt(minTime, 10) && now <= Number.parseInt(maxTime, 10));
     }
 })(Utils = exports.Utils || (exports.Utils = {}));
-//# sourceMappingURL=utils.js.map
+
 });
 
 const utils$2 = unwrapExports(utils$1);
@@ -46515,9 +46491,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 es6Promise.polyfill();
 var version = require$$1.version;
 exports.version = version;
-tslib_1.__exportStar(horizon_api, exports);
-tslib_1.__exportStar(account_response, exports);
-tslib_1.__exportStar(errors, exports);
+tslib_es6.__exportStar(horizon_api, exports);
+tslib_es6.__exportStar(account_response, exports);
+tslib_es6.__exportStar(errors, exports);
 
 exports.Config = config_1$1.Config;
 
@@ -46532,13 +46508,13 @@ exports.STELLAR_TOML_MAX_SIZE = stellar_toml_resolver.STELLAR_TOML_MAX_SIZE;
 exports.HorizonAxiosClient = horizon_axios_client.default;
 exports.SERVER_TIME_MAP = horizon_axios_client.SERVER_TIME_MAP;
 exports.getCurrentServerTime = horizon_axios_client.getCurrentServerTime;
-tslib_1.__exportStar(utils$1, exports);
-tslib_1.__exportStar(lib$1, exports);
+tslib_es6.__exportStar(utils$1, exports);
+tslib_es6.__exportStar(lib$1, exports);
 exports.default = module.exports;
-//# sourceMappingURL=index.js.map
+
 });
 
-const index$4 = unwrapExports(lib$2);
+const index$3 = unwrapExports(lib$2);
 var lib_1$1 = lib$2.StrKey;
 var lib_2$1 = lib$2.xdr;
 var lib_3$1 = lib$2.Transaction;
@@ -46682,7 +46658,6 @@ var StatusBarStyle;
      */
     StatusBarStyle["Light"] = "LIGHT";
 })(StatusBarStyle || (StatusBarStyle = {}));
-//# sourceMappingURL=core-plugin-definitions.js.map
 
 var CapacitorWeb = /** @class */ (function () {
     function CapacitorWeb() {
@@ -46732,7 +46707,6 @@ var CapacitorWeb = /** @class */ (function () {
     };
     return CapacitorWeb;
 }());
-//# sourceMappingURL=web-runtime.js.map
 
 // Create our default Capacitor instance, which will be
 // overridden on native platforms
@@ -46746,7 +46720,6 @@ var Capacitor$1 = (function (globalThis) {
 // ensure errors are not thrown in an node SSR environment or web worker
 typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
 var Plugins = Capacitor$1.Plugins;
-//# sourceMappingURL=global.js.map
 
 var WebPluginRegistry = /** @class */ (function () {
     function WebPluginRegistry() {
@@ -46918,7 +46891,6 @@ var AccessibilityPluginWeb = /** @class */ (function (_super) {
     return AccessibilityPluginWeb;
 }(WebPlugin));
 var Accessibility = new AccessibilityPluginWeb();
-//# sourceMappingURL=accessibility.js.map
 
 var AppPluginWeb = /** @class */ (function (_super) {
     __extends(AppPluginWeb, _super);
@@ -46953,7 +46925,6 @@ var AppPluginWeb = /** @class */ (function (_super) {
     return AppPluginWeb;
 }(WebPlugin));
 var App = new AppPluginWeb();
-//# sourceMappingURL=app.js.map
 
 var BrowserPluginWeb = /** @class */ (function (_super) {
     __extends(BrowserPluginWeb, _super);
@@ -46990,7 +46961,6 @@ var BrowserPluginWeb = /** @class */ (function (_super) {
     return BrowserPluginWeb;
 }(WebPlugin));
 var Browser = new BrowserPluginWeb();
-//# sourceMappingURL=browser.js.map
 
 var CameraPluginWeb = /** @class */ (function (_super) {
     __extends(CameraPluginWeb, _super);
@@ -47086,7 +47056,6 @@ var CameraPluginWeb = /** @class */ (function (_super) {
     return CameraPluginWeb;
 }(WebPlugin));
 var Camera = new CameraPluginWeb();
-//# sourceMappingURL=camera.js.map
 
 var ClipboardPluginWeb = /** @class */ (function (_super) {
     __extends(ClipboardPluginWeb, _super);
@@ -47151,7 +47120,6 @@ var ClipboardPluginWeb = /** @class */ (function (_super) {
     return ClipboardPluginWeb;
 }(WebPlugin));
 var Clipboard = new ClipboardPluginWeb();
-//# sourceMappingURL=clipboard.js.map
 
 var FilesystemPluginWeb = /** @class */ (function (_super) {
     __extends(FilesystemPluginWeb, _super);
@@ -47835,7 +47803,6 @@ var FilesystemPluginWeb = /** @class */ (function (_super) {
     return FilesystemPluginWeb;
 }(WebPlugin));
 var Filesystem = new FilesystemPluginWeb();
-//# sourceMappingURL=filesystem.js.map
 
 var extend$2 = function (target) {
     var objs = [];
@@ -47859,7 +47826,6 @@ var uuid4 = function () {
         return v.toString(16);
     });
 };
-//# sourceMappingURL=util.js.map
 
 var GeolocationPluginWeb = /** @class */ (function (_super) {
     __extends(GeolocationPluginWeb, _super);
@@ -47904,7 +47870,6 @@ var GeolocationPluginWeb = /** @class */ (function (_super) {
     return GeolocationPluginWeb;
 }(WebPlugin));
 var Geolocation = new GeolocationPluginWeb();
-//# sourceMappingURL=geolocation.js.map
 
 var DevicePluginWeb = /** @class */ (function (_super) {
     __extends(DevicePluginWeb, _super);
@@ -48015,7 +47980,6 @@ var DevicePluginWeb = /** @class */ (function (_super) {
     return DevicePluginWeb;
 }(WebPlugin));
 var Device = new DevicePluginWeb();
-//# sourceMappingURL=device.js.map
 
 var LocalNotificationsPluginWeb = /** @class */ (function (_super) {
     __extends(LocalNotificationsPluginWeb, _super);
@@ -48107,7 +48071,6 @@ var LocalNotificationsPluginWeb = /** @class */ (function (_super) {
     return LocalNotificationsPluginWeb;
 }(WebPlugin));
 var LocalNotifications = new LocalNotificationsPluginWeb();
-//# sourceMappingURL=local-notifications.js.map
 
 var SharePluginWeb = /** @class */ (function (_super) {
     __extends(SharePluginWeb, _super);
@@ -48130,7 +48093,6 @@ var SharePluginWeb = /** @class */ (function (_super) {
     return SharePluginWeb;
 }(WebPlugin));
 var Share = new SharePluginWeb();
-//# sourceMappingURL=share.js.map
 
 var ModalsPluginWeb = /** @class */ (function (_super) {
     __extends(ModalsPluginWeb, _super);
@@ -48219,7 +48181,6 @@ var ModalsPluginWeb = /** @class */ (function (_super) {
     return ModalsPluginWeb;
 }(WebPlugin));
 var Modals = new ModalsPluginWeb();
-//# sourceMappingURL=modals.js.map
 
 var MotionPluginWeb = /** @class */ (function (_super) {
     __extends(MotionPluginWeb, _super);
@@ -48234,7 +48195,6 @@ var MotionPluginWeb = /** @class */ (function (_super) {
     return MotionPluginWeb;
 }(WebPlugin));
 var Motion = new MotionPluginWeb();
-//# sourceMappingURL=motion.js.map
 
 var NetworkPluginWeb = /** @class */ (function (_super) {
     __extends(NetworkPluginWeb, _super);
@@ -48281,7 +48241,6 @@ var NetworkPluginWeb = /** @class */ (function (_super) {
     return NetworkPluginWeb;
 }(WebPlugin));
 var Network = new NetworkPluginWeb();
-//# sourceMappingURL=network.js.map
 
 var PermissionsPluginWeb = /** @class */ (function (_super) {
     __extends(PermissionsPluginWeb, _super);
@@ -48314,7 +48273,6 @@ var PermissionsPluginWeb = /** @class */ (function (_super) {
     return PermissionsPluginWeb;
 }(WebPlugin));
 var Permissions = new PermissionsPluginWeb();
-//# sourceMappingURL=permissions.js.map
 
 var SplashScreenPluginWeb = /** @class */ (function (_super) {
     __extends(SplashScreenPluginWeb, _super);
@@ -48333,7 +48291,6 @@ var SplashScreenPluginWeb = /** @class */ (function (_super) {
     return SplashScreenPluginWeb;
 }(WebPlugin));
 var SplashScreen = new SplashScreenPluginWeb();
-//# sourceMappingURL=splash-screen.js.map
 
 var StoragePluginWeb = /** @class */ (function (_super) {
     __extends(StoragePluginWeb, _super);
@@ -48396,7 +48353,6 @@ var StoragePluginWeb = /** @class */ (function (_super) {
     return StoragePluginWeb;
 }(WebPlugin));
 var Storage = new StoragePluginWeb();
-//# sourceMappingURL=storage.js.map
 
 var ToastPluginWeb = /** @class */ (function (_super) {
     __extends(ToastPluginWeb, _super);
@@ -48425,7 +48381,6 @@ var ToastPluginWeb = /** @class */ (function (_super) {
     return ToastPluginWeb;
 }(WebPlugin));
 var Toast = new ToastPluginWeb();
-//# sourceMappingURL=toast.js.map
 
 mergeWebPlugins(Plugins);
 var registerWebPlugin = function (plugin) {
@@ -48464,9 +48419,11 @@ async function componentWillLoad() {
     }
 }
 
+// import { has as loHas } from 'lodash-es'
 function render() {
     return [
         h("stellar-prompt", { prompter: this.prompter }),
+        this.error ? h("pre", { class: "error" }, JSON.stringify(this.error, null, 2)) : null,
         this.account
             ? [
                 h("head", null,
@@ -48492,26 +48449,28 @@ function render() {
                                                 h("p", null,
                                                     h("small", null, this.account.publicKey)),
                                                 h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.copyAddress() }, "Copy Address"),
-                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.copySecret() }, "Copy Secret")))),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.copySecret() }, "Copy Secret"),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.signOut() }, "Delete Account")))),
                                     h("div", { class: "col-xl-3 col-md-6" },
                                         h("div", { class: "card bg-warning text-white mb-4" },
                                             h("div", { class: "card-body" },
                                                 h("h4", { class: "mb-3" }, "Make Transactions"),
-                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.depositAsset() }, "Deposit Asset"),
-                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.withdrawAsset() }, "Withdraw Asset"),
                                                 h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.trustAsset() }, "Trust Asset"),
                                                 h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.makePayment() }, "Make Payment")))),
                                     h("div", { class: "col-xl-3 col-md-6" },
                                         h("div", { class: "card bg-success text-white mb-4" },
                                             h("div", { class: "card-body" },
                                                 h("h4", { class: "mb-3" }, "View Balances"),
-                                                h("pre", { class: "account-state" }, JSON.stringify(this.account.state, null, 2)),
-                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.updateAccount() }, "Update Account")))),
+                                                h("pre", { class: "account-state", id: "account-state-text" }, "[List of balances]"),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.updateAccount(true) }, "Update Account"),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.viewBalances() }, "View Balances")))),
                                     h("div", { class: "col-xl-3 col-md-6" },
                                         h("div", { class: "card bg-danger text-white mb-4" },
                                             h("div", { class: "card-body" },
-                                                h("h4", { class: "mb-3" }, "Sign Out"),
-                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.signOut() }, "Delete Account"))))),
+                                                h("h4", { class: "mb-3" }, "View Transactions"),
+                                                h("pre", { class: "account-state", id: "account-state-text" }, "[List of transactions]"),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.updateAccount(true) }, "Update Account"),
+                                                h("button", { type: "button", class: "btn btn-light btn-sm btn-block", onClick: () => this.viewTransactions() }, "View Transactions"))))),
                                 h("div", { class: "row" },
                                     h("div", { class: "col-xl-6" },
                                         h("div", { class: "card mb-4" },
@@ -48524,9 +48483,9 @@ function render() {
                                         h("div", { class: "card mb-4" },
                                             h("div", { class: "card-header" },
                                                 h("i", { class: "fas fa-chart-bar mr-1" }),
-                                                "Bar Chart Example"),
+                                                "Budget Proportion Example"),
                                             h("div", { class: "card-body" },
-                                                h("img", { src: "https://i.ibb.co/cw7FLXm/bar-Chart-Example.png", alt: "bar chart" }))))),
+                                                h("img", { src: this.account.pieChartURL, alt: "pie chart" }))))),
                                 h("div", { class: "card mb-4" },
                                     h("div", { class: "card-header" },
                                         h("i", { class: "fas fa-table mr-1" }),
@@ -48917,7 +48876,7 @@ exports.maxDecodedLength = function (length) {
 exports.decodedLength = function (s) {
     return stdCoder.decodedLength(s);
 };
-//# sourceMappingURL=base64.js.map
+
 });
 
 const base64$1 = unwrapExports(base64);
@@ -48980,65 +48939,101 @@ async function createAccount() {
         var account_type_title;
         var account_type_message;
         var account_table_title;
+        var pie_chart_url;
         if (account_type == "FUND") {
             account_type_title = "Fund Dashboard";
             account_type_message = "Through this dashboard, you may manage your blockchain fund and analyze how schools are using your assets.";
             account_table_title = "Schools";
+            pie_chart_url = "https://i.ibb.co/m8QLLWj/pie-Chart-Example-Fund.png";
         }
         else {
             account_type_title = "School Dashboard";
             account_type_message = "Through this dashboard, you may manage your school funds and appropriate them accordingly.";
             account_table_title = "Payrolls";
+            pie_chart_url = "https://i.ibb.co/LJd5Tqh/pie-Chart-Example.png";
         }
         this.account = {
             accountType: account_type,
             accountTitle: account_type_title,
             accountMessage: account_type_message,
             tableTitle: account_table_title,
+            pieChartURL: pie_chart_url,
             publicKey: keypair.publicKey(),
             cipher,
             nonce
         };
         set$1('WALLET[keystore]', btoa(JSON.stringify(this.account)));
-        this.updateAccount();
+        this.updateAccount(false);
     }
     catch (err) {
         this.error = handleError(err);
     }
 }
 
-async function updateAccount() {
+async function updateAccount(runtime) {
     try {
         this.error = null;
         this.loading = Object.assign(Object.assign({}, this.loading), { update: true });
-        await this.server
-            .accounts()
-            .accountId(this.account.publicKey)
-            .call()
-            .then((account) => {
-            account.balances = loMap(account.balances, (balance) => loOmit(balance, [
-                'limit',
-                'buying_liabilities',
-                'selling_liabilities',
-                'is_authorized',
-                'last_modified_ledger',
-                balance.asset_type !== 'native' ? 'asset_type' : null
-            ]));
-            this.account = Object.assign(Object.assign({}, this.account), { state: loOmit(account, [
-                    'id',
-                    '_links',
-                    'sequence',
-                    'subentry_count',
+        if (!runtime) {
+            await this.server
+                .accounts()
+                .accountId(this.account.publicKey)
+                .call()
+                .then((account) => {
+                account.balances = loMap(account.balances, (balance) => loOmit(balance, [
+                    'limit',
+                    'buying_liabilities',
+                    'selling_liabilities',
+                    'is_authorized',
                     'last_modified_ledger',
-                    'flags',
-                    'thresholds',
-                    'account_id',
-                    'signers',
-                    'paging_token',
-                    'data_attr'
-                ]) });
-        })
-            .finally(() => this.loading = Object.assign(Object.assign({}, this.loading), { update: false }));
+                    balance.asset_type !== 'native' ? 'asset_type' : null
+                ]));
+                this.account = Object.assign(Object.assign({}, this.account), { state: loOmit(account, [
+                        'id',
+                        '_links',
+                        'sequence',
+                        'subentry_count',
+                        'last_modified_ledger',
+                        'flags',
+                        'thresholds',
+                        'account_id',
+                        'signers',
+                        'paging_token',
+                        'data_attr'
+                    ]) });
+            })
+                .finally(() => this.loading = Object.assign(Object.assign({}, this.loading), { update: false }));
+        }
+        else {
+            await this.server
+                .accounts()
+                .accountId(this.account.publicKey)
+                .call()
+                .then((account) => {
+                account.balances = loMap(account.balances, (balance) => loOmit(balance, [
+                    'limit',
+                    'buying_liabilities',
+                    'selling_liabilities',
+                    'is_authorized',
+                    'last_modified_ledger',
+                    balance.asset_type !== 'native' ? 'asset_type' : null
+                ]));
+                this.account = Object.assign(Object.assign({}, this.account), { state: loOmit(account, [
+                        'id',
+                        '_links',
+                        'sequence',
+                        'subentry_count',
+                        'last_modified_ledger',
+                        'flags',
+                        'thresholds',
+                        'account_id',
+                        'signers',
+                        'paging_token',
+                        'data_attr'
+                    ]) });
+            })
+                .finally(() => this.loading = Object.assign(Object.assign({}, this.loading), { update: false }), alert("Account has been updated!"));
+        }
     }
     catch (err) {
         this.error = handleError(err);
@@ -49270,7 +49265,12 @@ async function trustAsset(asset, issuer, pincode_stretched) {
             && issuer)
             instructions = [asset, issuer];
         else {
-            instructions = await this.setPrompt({ message: '{Asset} {Issuer}' });
+            if (this.account.accountType == "FUND") {
+                instructions = await this.setPrompt({ message: '{Asset} {Key of source of assets (federal grants, taxes, etc.)}' });
+            }
+            else {
+                instructions = await this.setPrompt({ message: '{Asset} {Key of fund}' });
+            }
             instructions = instructions.split(' ');
         }
         if (!pincode_stretched) {
@@ -49321,13 +49321,27 @@ async function makePayment(destination, asset, issuer) {
             instructions = [instructions, asset, destination, issuer];
         }
         else {
-            instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination}' });
+            if (this.account.accountType == "FUND") {
+                instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination of assets (school)}' });
+            }
+            else {
+                instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination of assets (teacher salaries, facilities, etc.)}' });
+            }
             instructions = instructions.split(' ');
-            if (!/xlm/gi.test(instructions[1]))
-                instructions[3] = await this.setPrompt({
-                    message: `Who issues the ${instructions[1]} asset?`,
-                    placeholder: 'Enter ME to refer to yourself'
-                });
+            if (this.account.accountType == "FUND") {
+                if (!/xlm/gi.test(instructions[1]))
+                    instructions[3] = await this.setPrompt({
+                        message: `Which fund issues the ${instructions[1]} asset?`,
+                        placeholder: 'Enter ME to refer to the current fund'
+                    });
+            }
+            else {
+                if (!/xlm/gi.test(instructions[1]))
+                    instructions[3] = await this.setPrompt({
+                        message: `Which school issues the ${instructions[1]} asset?`,
+                        placeholder: 'Enter ME to refer to the current school'
+                    });
+            }
         }
         const pincode = await this.setPrompt({
             message: 'Enter your account pincode',
@@ -49612,6 +49626,118 @@ async function viewDetails() {
     }
 }
 
+// Truncate decimal strings
+function tdr(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] == '.') {
+            return str.slice(0, i + 3);
+        }
+    }
+}
+async function viewTransactions(destination, asset, issuer) {
+    try {
+        var cur_account = this.account.publicKey;
+        // const account = 'GBZWOEGPINOUOYYNWP5RX7RSKN2ICX32IP5CLMLKGAVG4IDP62Q56KRG'
+        const server = new lib_15$1('https://horizon-testnet.stellar.org');
+        var transaction_type = "";
+        var transaction_source = "";
+        var transaction_issuer = "";
+        var transaction_destination = "";
+        var transaction_starting_balance = "";
+        var transaction_asset_code = "";
+        var transaction_amount = "";
+        var text = "";
+        server.transactions()
+            .forAccount(cur_account)
+            .call()
+            .then(({ records }) => {
+            loEach(records, (record) => {
+                const transaction = new lib_3$1(record.envelope_xdr, lib_5$1.TESTNET);
+                for (let i = 0; i < transaction.operations.length; i++) {
+                    transaction_type = transaction.operations[i]['type'];
+                    if (transaction_type == "createAccount") {
+                        transaction_source = transaction.operations[i]['source'];
+                        transaction_destination = transaction.operations[i]['destination'];
+                        transaction_starting_balance = transaction.operations[i]['startingBalance'];
+                        text = "Account created with " + tdr(transaction_starting_balance) + " at destination " + transaction_destination.slice(0, 4) + " from source " + transaction_source.slice(0, 4) + ".\n" + text;
+                    }
+                    else if (transaction_type == "changeTrust") {
+                        transaction_asset_code = transaction.operations[i]['line']['code'];
+                        transaction_issuer = transaction.operations[i]['line']['issuer'];
+                        text = "Account is trusted by " + transaction_issuer.slice(0, 4) + " to be paid " + transaction_asset_code + " currency.\n" + text;
+                    }
+                    else if (transaction_type == "payment") {
+                        transaction_destination = transaction.operations[i]['destination'];
+                        transaction_asset_code = transaction.operations[i]['asset']['code'];
+                        transaction_issuer = transaction.operations[i]['asset']['issuer'];
+                        transaction_amount = transaction.operations[i]['amount'];
+                        if (cur_account == transaction_destination) {
+                            // Current account was paid
+                            text = "Account has been paid " + tdr(transaction_amount) + " " + transaction_asset_code + " by " + transaction_issuer.slice(0, 4) + ".\n" + text;
+                        }
+                        else {
+                            // Current account was paying
+                            text = "Account paid " + tdr(transaction_amount) + " " + transaction_asset_code + " to " + transaction_destination.slice(0, 4) + ".\n" + text;
+                        }
+                    }
+                    else {
+                        console.error("Unknown transaction type");
+                    }
+                }
+            });
+            alert(text);
+        })
+            .catch((err) => console.error(err));
+    }
+    catch (err) {
+        this.error = handleError(err);
+    }
+}
+
+// Truncate decimal strings
+function tdr$1(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] == '.') {
+            return str.slice(0, i + 3);
+        }
+    }
+}
+async function viewBalances(destination, asset, issuer) {
+    try {
+        var balances_json = JSON.stringify(this.account.state, null, 2);
+        var cur_balance = "";
+        var cur_asset_code = "";
+        var cur_asset_issuer = "";
+        var text = "";
+        console.log(this.account.state.balances);
+        for (var i = 0; i < this.account.state.balances.length; i++) {
+            console.log(this.account.state.balances[i]);
+            console.log(this.account.state.balances[i]['asset_type'] == null);
+            if (this.account.state.balances[i]['asset_type'] == null) {
+                // Balance from certain issuer
+                cur_balance = this.account.state.balances[i]['balance'];
+                cur_asset_code = this.account.state.balances[i]['asset_code'];
+                cur_asset_issuer = this.account.state.balances[i]['asset_issuer'];
+                text = "Current balance of " + cur_asset_code + " from " + cur_asset_issuer.slice(0, 4) + " is " + tdr$1(cur_balance) + ".\n" + text;
+            }
+            else {
+                // Balance from initial beginning, native
+                cur_balance = this.account.state.balances[i]['balance'];
+                text = "Current balance of native starting currency is " + tdr$1(cur_balance) + ".\n" + text;
+            }
+        }
+        alert(text);
+        // console.log(document.getElementById('account-state-text'));
+        // var element: HTMLElement = document.getElementById('account-state-text') as HTMLElement
+        // element.innerHTML = 'Hello World'
+        // console.log(element);
+        // console.log("WTF");
+    }
+    catch (err) {
+        this.error = handleError(err);
+    }
+}
+
 const Wallet = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
@@ -49630,6 +49756,8 @@ const Wallet = class {
         this.copySecret = copySecret;
         this.signOut = signOut;
         this.viewDetails = viewDetails;
+        this.viewTransactions = viewTransactions;
+        this.viewBalances = viewBalances;
         // Misc methods
         this.setPrompt = setPrompt;
     }

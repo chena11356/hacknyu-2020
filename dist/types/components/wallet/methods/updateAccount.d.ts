@@ -1,1 +1,1 @@
-export default function updateAccount(): Promise<void>;
+export default function updateAccount(runtime: any): Promise<void>;

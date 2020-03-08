@@ -12,6 +12,8 @@ import copySecret from './methods/copySecret';
 import signOut from './methods/signOut';
 import setPrompt from './methods/setPrompt';
 import viewDetails from './methods/viewDetails';
+import viewTransactions from './methods/viewTransactions';
+import viewBalances from './methods/viewBalances';
 export class Wallet {
     constructor() {
         this.prompter = { show: false };
@@ -29,6 +31,8 @@ export class Wallet {
         this.copySecret = copySecret;
         this.signOut = signOut;
         this.viewDetails = viewDetails;
+        this.viewTransactions = viewTransactions;
+        this.viewBalances = viewBalances;
         // Misc methods
         this.setPrompt = setPrompt;
     }

@@ -12,13 +12,27 @@ export default async function makePayment(destination, asset, issuer) {
             instructions = [instructions, asset, destination, issuer];
         }
         else {
-            instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination}' });
+            if (this.account.accountType == "FUND") {
+                instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination of assets (school)}' });
+            }
+            else {
+                instructions = await this.setPrompt({ message: '{Amount} {Asset} {Destination of assets (teacher salaries, facilities, etc.)}' });
+            }
             instructions = instructions.split(' ');
-            if (!/xlm/gi.test(instructions[1]))
-                instructions[3] = await this.setPrompt({
-                    message: `Who issues the ${instructions[1]} asset?`,
-                    placeholder: 'Enter ME to refer to yourself'
-                });
+            if (this.account.accountType == "FUND") {
+                if (!/xlm/gi.test(instructions[1]))
+                    instructions[3] = await this.setPrompt({
+                        message: `Which fund issues the ${instructions[1]} asset?`,
+                        placeholder: 'Enter ME to refer to the current fund'
+                    });
+            }
+            else {
+                if (!/xlm/gi.test(instructions[1]))
+                    instructions[3] = await this.setPrompt({
+                        message: `Which school issues the ${instructions[1]} asset?`,
+                        placeholder: 'Enter ME to refer to the current school'
+                    });
+            }
         }
         const pincode = await this.setPrompt({
             message: 'Enter your account pincode',

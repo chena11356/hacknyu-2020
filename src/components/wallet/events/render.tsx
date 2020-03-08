@@ -1,10 +1,10 @@
 import { h } from '@stencil/core'
-import { has as loHas } from 'lodash-es'
+// import { has as loHas } from 'lodash-es'
 
 export default function render() {
   return [
     <stellar-prompt prompter={this.prompter} />,
-
+    this.error ? <pre class="error">{JSON.stringify(this.error, null, 2)}</pre> : null,
     this.account
     ? [
       <head>
@@ -33,6 +33,7 @@ export default function render() {
                                       <p><small>{this.account.publicKey}</small></p>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.copyAddress()}>Copy Address</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.copySecret()}>Copy Secret</button>
+                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.signOut()}>Delete Account</button>
                                     </div>
                                 </div>
                             </div>
@@ -40,8 +41,6 @@ export default function render() {
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">
                                       <h4 class="mb-3">Make Transactions</h4>
-                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.depositAsset()}>Deposit Asset</button>
-                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.withdrawAsset()}>Withdraw Asset</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.trustAsset()}>Trust Asset</button>
                                       <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.makePayment()}>Make Payment</button>
                                     </div>
@@ -51,16 +50,19 @@ export default function render() {
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">
                                       <h4 class="mb-3">View Balances</h4>
-                                        <pre class="account-state">{JSON.stringify(this.account.state, null, 2)}</pre>
-                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.updateAccount()}>Update Account</button>
+                                      <pre class="account-state" id="account-state-text">{ "[List of balances]" }</pre>
+                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.updateAccount(true)}>Update Account</button>
+                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.viewBalances()}>View Balances</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">
-                                      <h4 class="mb-3">Sign Out</h4>
-                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.signOut()}>Delete Account</button>
+                                      <h4 class="mb-3">View Transactions</h4>
+                                      <pre class="account-state" id="account-state-text">{ "[List of transactions]" }</pre>
+                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.updateAccount(true)}>Update Account</button>
+                                      <button type="button" class="btn btn-light btn-sm btn-block" onClick={() => this.viewTransactions()}>View Transactions</button>
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +76,8 @@ export default function render() {
                             </div>
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Bar Chart Example</div>
-                                    <div class="card-body"><img src="https://i.ibb.co/cw7FLXm/bar-Chart-Example.png" alt="bar chart"></img></div>
+                                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Budget Proportion Example</div>
+                                    <div class="card-body"><img src={this.account.pieChartURL} alt="pie chart"></img></div>
                                 </div>
                             </div>
                         </div>
