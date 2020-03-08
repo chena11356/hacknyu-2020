@@ -1,4 +1,4 @@
-![Bloool Logo](logo.png =300x)
+![Bloool Logo](logo.png)
 
 # Bloool
 
